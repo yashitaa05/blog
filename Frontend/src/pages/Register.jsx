@@ -23,7 +23,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      await axios.post(`${import.meta.env.VITE_URL}/api/auth/register`, formData);
+      await axios.post(`${import.meta.env.VITE_URL}/auth/register`, formData);
       navigate("/login");
     } catch (error) {
       console.log(error);
