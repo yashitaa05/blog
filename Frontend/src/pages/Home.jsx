@@ -32,7 +32,7 @@ const Home = () => {
           </a> */}
 
           <button Link to="/register" className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 font-semibold shadow-lg hover:scale-105 hover:shadow-blue-500/40 transition">
-            Get Started
+            Get Started hhh
           </button>
           <button Link to="/login" className="px-6 py-3 rounded-xl border border-white/20 bg-white/10 backdrop-blur-xl font-semibold hover:bg-white/20 hover:scale-105 transition">
             Login
