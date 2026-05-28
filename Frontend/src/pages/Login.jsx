@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import API from "../services/api";
 import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await API.post("/auth/login", formData);
+      const res = await axios.post(`${import.meta.env.VITE_URL}/api/auth/login`, formData);
 
       localStorage.setItem("token", res.data.token);
       if (res.data.user) {

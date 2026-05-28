@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import API from "../services/api";
 import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      await API.post("/auth/register", formData);
+      await axios.post(`${import.meta.env.VITE_URL}/api/auth/register`, formData);
       navigate("/login");
     } catch (error) {
       console.log(error);

@@ -12,13 +12,13 @@ app.use(express.static(path.join(__dirname,'/public')));
 app.use(express.json());
 
 app.use(cors({
-    origin:process.env.FRONTEND_URL,
+    origin:"http://localhost:5173",
     methods:["POST","GET","DELETE","PUT"],
     credentials:true,
 }));
 
-app.use("/",require("./routes/authRoutes"));
-app.use("/",require("./routes/productRoutes"));
+app.use("/api/auth",require("./routes/authRoutes"));
+app.use("/api/product",require("./routes/productRoutes"));
 // app.use("/auth/register",require("./routes/authRoutes"));
 // app.use("/auth/login",require("./routes/authRoutes"));
 
