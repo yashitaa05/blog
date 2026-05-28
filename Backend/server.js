@@ -17,8 +17,8 @@ app.use(cors({
     credentials:true,
 }));
 
-app.use("/api/auth",require("./routes/authRoutes"));
-app.use("/api/product",require("./routes/productRoutes"));
+app.use("/",require("./routes/authRoutes"));
+app.use("/",require("./routes/productRoutes"));
 // app.use("/auth/register",require("./routes/authRoutes"));
 // app.use("/auth/login",require("./routes/authRoutes"));
 
