@@ -18,23 +18,45 @@ const Login = () => {
     });
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   try {
+  //     const res = await axios.post(`${import.meta.env.VITE_URL}/auth/login`, formData);
+
+  //     localStorage.setItem("token", res.data.token);
+  //     if (res.data.user) {
+  //       localStorage.setItem("user", JSON.stringify(res.data.user));
+  //     }
+
+  //     navigate("/dashboard");
+  //   } catch (error) {
+  //     console.log(error);
+  //     alert("Login Failed");
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const res = await axios.post(`${import.meta.env.VITE_URL}/auth/login`, formData);
+  try {
+    const res = await API.post("/auth/login", formData);
 
-      localStorage.setItem("token", res.data.token);
-      if (res.data.user) {
-        localStorage.setItem("user", JSON.stringify(res.data.user));
-      }
+    localStorage.setItem("token", res.data.token);
 
-      navigate("/dashboard");
-    } catch (error) {
-      console.log(error);
-      alert("Login Failed");
+    if (res.data.user) {
+      localStorage.setItem(
+        "user",
+        JSON.stringify(res.data.user)
+      );
     }
-  };
+
+    navigate("/dashboard");
+  } catch (error) {
+    console.log(error);
+    alert("Login Failed");
+  }
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black px-4">
