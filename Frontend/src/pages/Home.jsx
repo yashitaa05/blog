@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -23,19 +24,19 @@ const Home = () => {
         {/* Buttons */}
         <div className="mt-8 flex gap-4 flex-col sm:flex-row">
 
-          <a
-            href="/register"
+          {/* <a
+           
             className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 font-semibold shadow-lg hover:scale-105 hover:shadow-blue-500/40 transition"
           >
             Get Started
-          </a>
+          </a> */}
 
-          <a
-            href="/login"
-            className="px-6 py-3 rounded-xl border border-white/20 bg-white/10 backdrop-blur-xl font-semibold hover:bg-white/20 hover:scale-105 transition"
-          >
+          <button Link to="/register" className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 font-semibold shadow-lg hover:scale-105 hover:shadow-blue-500/40 transition">
+            Get Started
+          </button>
+          <button Link to="/login" className="px-6 py-3 rounded-xl border border-white/20 bg-white/10 backdrop-blur-xl font-semibold hover:bg-white/20 hover:scale-105 transition">
             Login
-          </a>
+          </button>
 
         </div>
 
